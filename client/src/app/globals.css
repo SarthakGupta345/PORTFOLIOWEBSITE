@@ -16,14 +16,14 @@
 
 @layer base {
   :root {
-    --background: #faf9fb;
+    --background: #fdfcff; /* Cleaner white with slight blue/purple tint */
     --foreground: #09090b;
     --muted: #71717a;
-    --border: #e4e4e7;
-    --card-bg: #ffffff;
-    --card-border: #f4f4f5;
+    --border: rgba(168, 85, 247, 0.1); /* Subtle purple border */
+    --card-bg: rgba(255, 255, 255, 0.7); /* Translucent cards */
+    --card-border: rgba(168, 85, 247, 0.05);
     --accent: #a855f7; /* Purple accent */
-    --nav-bg: rgba(250, 249, 251, 0.85);
+    --nav-bg: rgba(253, 252, 255, 0.7); /* Glassy nav */
   }
 
   [data-theme='dark'] {
