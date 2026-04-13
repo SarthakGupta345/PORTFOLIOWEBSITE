@@ -4,6 +4,7 @@ import { ThemeProvider } from "./ThemeProvider";
 import Nav from "./Nav";
 
 import InteractiveBackground from "./InteractiveBackground";
+import CursorFollower from "@/components/CursorFollower";
 
 export const metadata: Metadata = {
   title: "Cédric Karungu - Portfolio",
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body>
         <ThemeProvider>
+          <CursorFollower />
           <InteractiveBackground />
           <Nav />
           {children}
