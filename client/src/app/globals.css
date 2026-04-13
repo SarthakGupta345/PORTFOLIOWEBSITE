@@ -58,6 +58,7 @@ a:hover {
 .section {
   padding: 6rem 0;
   border-bottom: 1px solid var(--border);
+  scroll-margin-top: 80px; /* Fix for fixed header overlapping anchors */
 }
 
 .section:last-child {

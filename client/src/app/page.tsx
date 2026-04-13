@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const SKILLS_DATA = {
@@ -62,41 +62,25 @@ const PROJECTS_DATA = [
 ];
 
 function TypewriterEffect() {
-  const texts = ["Full stack coder", "Frontend", "Backend", "AI", "Competitive Programmer"];
-  const [textIndex, setTextIndex] = useState(0);
+  const fullText = "Full stack coder | Frontend | Backend | AI | Competitive Programmer";
   const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    const currentWord = texts[textIndex];
-    if (isDeleting) {
+    if (displayText.length < fullText.length) {
       timer = setTimeout(() => {
-        setDisplayText(currentWord.substring(0, displayText.length - 1));
-        if (displayText.length <= 1) { 
-           setIsDeleting(false);
-           setTextIndex((prev) => (prev + 1) % texts.length);
-        }
-      }, 40);
-    } else {
-      timer = setTimeout(() => {
-        setDisplayText(currentWord.substring(0, displayText.length + 1));
-        if (displayText.length === currentWord.length) {
-          timer = setTimeout(() => {
-            setIsDeleting(true);
-          }, 1500);
-        }
-      }, 100);
+        setDisplayText(fullText.substring(0, displayText.length + 1));
+      }, 60); // Typing speed
     }
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, textIndex]);
+  }, [displayText]);
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      style={{ color: '#a855f7', fontSize: '1.25rem', marginBottom: '2rem', fontWeight: 500, display: 'inline-flex', alignItems: 'center', height: '2rem' }}
+      style={{ color: '#a855f7', fontSize: '1.25rem', marginBottom: '2rem', fontWeight: 500, display: 'inline-flex', alignItems: 'center', minHeight: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}
     >
       <span>{displayText || "\u00A0"}</span>
       <motion.span 
