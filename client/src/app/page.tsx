@@ -33,31 +33,80 @@ const PROJECTS_DATA = [
     img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
     description: "Ever Teams is an all-in-one work and project management platform that helps teams manage tasks, track time and productivity.",
     link: "#",
-    github: "#"
+    github: "#",
+    techStack: ["React", "Nest.js", "GraphQL"]
   },
   {
-    title: "Ever Gauzy Platform",
+    title: "AdminAtete",
     category: "Web",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    description: "Open business management platform combining ERP, CRM, HRM, and projects in one system.",
+    description: "Company document archiving application that allows businesses to digitize, organize, and securely store their important documents for easy access and management.",
     link: "#",
-    github: "#"
+    github: "#",
+    techStack: ["React JS", "Express JS", "PostgreSQL", "Sequelize"]
   },
   {
-    title: "Acho System",
-    category: "Web",
+    title: "Focus",
+    category: "App",
     img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-    description: "A secure and sustainable payment and investment solution for all civil servants.",
+    description: "App mobile for quotes.",
     link: "#",
-    github: "#"
+    github: "#",
+    techStack: ["React Native", "Next.js", "Nest.js", "PostgreSQL", "TypeORM", "Turbo"]
   },
   {
     title: "HIÜRD",
     category: "App",
     img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
-    description: "A local service marketplace that helps people hire and get hired for everyday tasks.",
+    description: "HIÜRD is a local service marketplace that helps people hire and get hired for everyday tasks. Built on trust, local connections, and secure payments.",
     link: "#",
-    github: "#"
+    github: "#",
+    techStack: ["React Native", "Nest.js", "Stripe", "TypeORM", "Mobile"]
+  }
+];
+
+const EXPERIENCE_DATA = [
+  {
+    role: "Full Stack Engineer",
+    company: "Ever Technologies",
+    date: "Aug 2023 - Present",
+    remote: "Remote",
+    description: "Worked as a Full-stack Developer (Nest.js, Next.js, React Native) on Ever Teams (Open Work and Project Management Platform) and Ever Gauzy (Open Business Management Platform - ERP/CRM/HRM/ATS/PM). Also involved in various client projects."
+  },
+  {
+    role: "Full Stack Engineer",
+    company: "AdminAtete",
+    date: "Jan 2023 - Jul 2023",
+    remote: "Remote",
+    description: "Developed as a Full-stack Developer (Express.js, Next.js) for AdminAtete, a tech startup offering digital solutions for business services, including a document archiving application."
+  },
+  {
+    role: "Frontend Developer",
+    company: "CRES Startup",
+    date: "Jun 2022 - Dec 2022",
+    remote: "Remote",
+    description: "Worked as a Full-stack Web Developer (Nest.js, Next.js) for a start-up and research center focused on creating web applications and artificial intelligence solutions for business management and data collection."
+  },
+  {
+    role: "Backend Developer",
+    company: "Attendacy GDA (KADEA)",
+    date: "Feb 2022 - May 2022",
+    remote: "On-site",
+    description: "Worked as a Full-stack Developer (Express.js, React.js) for Attendacy GDA, an application to manage student attendance within a coding academy."
+  },
+  {
+    role: "Frontend Developer",
+    company: "One Stop Center",
+    date: "Sep 2021 - Feb 2022",
+    remote: "Remote",
+    description: "Worked as a Frontend Developer (Angular) on a web application that manages parcel-related information and shares it across multiple company agencies."
+  },
+  {
+    role: "Frontend Web Developer",
+    company: "Buku My Class",
+    date: "Dec 2018 - Sep 2021",
+    remote: "Remote",
+    description: "Worked as a Full Stack Developer (Frontend and Backend) and Frontend Developer (React.js) for Buku, an application enabling secondary school students to access class notes from anywhere."
   }
 ];
 
@@ -297,17 +346,26 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
               <div key={index} className="bg-card-bg border border-card-border rounded-xl flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl group">
-                <img src={project.img} alt={project.title} className="w-full h-[240px] object-cover bg-border" />
+                <img src={project.img} alt={project.title} className="w-full h-[260px] object-cover bg-border" />
                 <div className="p-6 flex flex-col gap-4 grow">
                   <div className="flex justify-between items-center">
                     <span className="text-accent text-[0.8rem] font-bold uppercase tracking-[0.05em]">{project.category}</span>
                     <div className="flex gap-2">
-                      <a href={project.link} className="w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center text-muted transition-all cursor-pointer hover:text-foreground hover:bg-border no-underline" title="Live Demo">↗</a>
-                      <a href={project.github} className="w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center text-muted transition-all cursor-pointer hover:text-foreground hover:bg-border no-underline" title="GitHub Source">⌨</a>
+                       <a href={project.link} className="w-9 h-9 rounded-full bg-[#18181b] border border-border/20 flex items-center justify-center text-muted transition-all cursor-pointer hover:text-white hover:bg-border/40" title="Live Demo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                      </a>
+                      <a href={project.github} className="w-9 h-9 rounded-full bg-[#18181b] border border-border/20 flex items-center justify-center text-muted transition-all cursor-pointer hover:text-white hover:bg-border/40" title="GitHub Source">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                      </a>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-semibold mt-2 mb-1">{project.title}</h3>
-                  <p className="text-muted text-[0.95rem]">{project.description}</p>
+                  <h3 className="text-2xl font-bold mt-2 mb-1">{project.title}</h3>
+                  <p className="text-muted text-[0.95rem] mb-4">{project.description}</p>
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    {project.techStack.map((tech, idx) => (
+                      <span key={idx} className="px-3 py-1.5 bg-[#18181b] text-muted rounded-full text-[0.8rem] font-medium border border-border/10">{tech}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -325,39 +383,42 @@ export default function Home() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-[1100px] mx-auto px-6">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-[-0.02em] mb-4">Experience</h2>
-          <p className="text-muted text-[1.1rem] mb-12">My journey through the tech industry.</p>
-          <div className="max-w-[800px]">
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-foreground mb-1">Full Stack Engineer</h3>
-              <h4 className="text-[1rem] font-medium text-muted mb-2">Ever Technologies</h4>
-              <p className="text-muted text-[1.1rem]">Worked as a Full-stack Developer (Nest.js, Next.js, React Native) on Ever Teams (Open Work and Project Management Platform) and Ever Gauzy (Open Business Management Platform - ERP/CRM/HRM/ATS/PM). Also involved in various client projects.</p>
-            </div>
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-foreground mb-1">Full Stack Engineer</h3>
-              <h4 className="text-[1rem] font-medium text-muted mb-2">AdminAtete</h4>
-              <p className="text-muted text-[1.1rem]">Developed as a Full-stack Developer (Express.js, Next.js) for AdminAtete, a tech startup offering digital solutions for business services, including a document archiving application.</p>
-            </div>
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-foreground mb-1">Frontend Developer</h3>
-              <h4 className="text-[1rem] font-medium text-muted mb-2">CRES Startup</h4>
-              <p className="text-muted text-[1.1rem]">Worked as a Full-stack Web Developer (Nest.js, Next.js) for a start-up and research center focused on creating web applications and artificial intelligence solutions for business management and data collection.</p>
-            </div>
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-foreground mb-1">Backend Developer</h3>
-              <h4 className="text-[1rem] font-medium text-muted mb-2">Attendacy GDA (KADEA)</h4>
-              <p className="text-muted text-[1.1rem]">Worked as a Full-stack Developer (Express.js, React.js) for Attendacy GDA, an application to manage student attendance within a coding academy.</p>
-            </div>
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-foreground mb-1">Frontend Developer</h3>
-              <h4 className="text-[1rem] font-medium text-muted mb-2">One Stop Center</h4>
-              <p className="text-muted text-[1.1rem]">Worked as a Frontend Developer (Angular) on a web application that manages parcel-related information and shares it across multiple company agencies.</p>
-            </div>
-             <div className="mb-12">
-              <h3 className="text-xl font-semibold text-foreground mb-1">Frontend Web Developer</h3>
-              <h4 className="text-[1rem] font-medium text-muted mb-2">Buku My Class</h4>
-              <p className="text-muted text-[1.1rem]">Worked as a Full Stack Developer (Frontend and Backend) and Frontend Developer (React.js) for Buku, an application enabling secondary school students to access class notes from anywhere.</p>
-            </div>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-[-0.02em] mb-4 text-center text-foreground">Professional Experience</h2>
+          <p className="text-muted text-[1.1rem] mb-16 text-center">My journey through the tech industry.</p>
+          
+          <div className="relative max-w-[900px] mx-auto">
+            {/* Main vertical line */}
+            <div className="absolute left-[20px] md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-accent/50 via-accent/20 to-transparent"></div>
+
+            {EXPERIENCE_DATA.map((exp, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`relative flex w-full mb-12 items-center`}
+                >
+                  {/* Connect node */}
+                  <div className="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 w-[14px] h-[14px] rounded-full bg-background border-2 border-accent shadow-[0_0_10px_rgba(168,85,247,0.8)] z-10"></div>
+                  
+                  {/* Timeline Card */}
+                  <div className={`w-[calc(100%-40px)] md:w-[45%] bg-[#120d1f] p-8 rounded-2xl border border-border/10 transition-all hover:border-accent/40 ml-auto ${isEven ? 'md:ml-0 md:mr-auto' : ''}`}>
+                    <span className="inline-block px-3 py-1 bg-[#1a1429] text-accent font-semibold text-[0.8rem] rounded-full mb-4">
+                      {exp.date}
+                    </span>
+                    <h3 className="text-2xl font-bold text-white mb-2">{exp.role}</h3>
+                    <h4 className="text-[1.05rem] font-medium text-muted mb-1">{exp.company}</h4>
+                    <span className="text-[0.85rem] text-muted block mb-4">{exp.remote}</span>
+                    <p className="text-muted text-[1rem] leading-relaxed">
+                      {exp.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </motion.section>
@@ -365,31 +426,85 @@ export default function Home() {
       {/* Contact Section */}
       <motion.section 
         id="contact" 
-        className="py-24 scroll-mt-20"
+        className="py-24 scroll-mt-20 relative"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="max-w-[1100px] mx-auto px-6">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-[-0.02em] mb-4">Get In Touch</h2>
-          <p className="text-muted text-[1.1rem] mb-12">Let's work together on your next project</p>
+        <div className="max-w-[1000px] mx-auto px-6 relative z-10">
+          <div className="text-center mb-16 flex flex-col items-center">
+            {/* Ambient glow behind heading */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-accent/15 rounded-full blur-[100px] pointer-events-none -z-10" />
+            
+            <span className="px-4 py-1.5 rounded-full bg-[#1a1429] border border-accent/20 text-accent font-medium text-sm mb-6 inline-block">
+              Get In Touch
+            </span>
+            <h2 className="text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-[-0.02em] mb-4 text-foreground">Get In Touch</h2>
+            <p className="text-muted text-[1.1rem]">Let's work together on your next project</p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div>
-              <h4 className="text-muted mb-2">Email</h4>
-              <a href="mailto:ckarungu921@gmail.com" className="text-[1.2rem] font-semibold hover:text-muted transition-colors">ckarungu921@gmail.com</a>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-8 mb-24">
+            {/* Left Column: Contact info cards */}
+            <div className="flex flex-col gap-6">
+              <div className="bg-[#120d1f] border border-border/10 p-6 rounded-2xl flex flex-col gap-1 transition-all hover:border-accent/40">
+                <div className="w-10 h-10 rounded-lg bg-[#1a1429] border border-accent/20 flex items-center justify-center text-accent mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                </div>
+                <h4 className="text-muted text-sm font-medium mb-0.5">Email</h4>
+                <a href="mailto:ckarungu921@gmail.com" className="text-foreground font-semibold text-sm hover:text-accent transition-colors">ckarungu921@gmail.com</a>
+              </div>
+
+              <div className="bg-[#120d1f] border border-border/10 p-6 rounded-2xl flex flex-col gap-1 transition-all hover:border-accent/40">
+                <div className="w-10 h-10 rounded-lg bg-[#1a1429] border border-accent/20 flex items-center justify-center text-accent mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                </div>
+                <h4 className="text-muted text-sm font-medium mb-0.5">Phone</h4>
+                <p className="text-foreground font-semibold text-sm">+243 970 509 466</p>
+              </div>
+
+              <div className="bg-[#120d1f] border border-border/10 p-6 rounded-2xl flex flex-col gap-1 transition-all hover:border-accent/40">
+                <div className="w-10 h-10 rounded-lg bg-[#1a1429] border border-accent/20 flex items-center justify-center text-accent mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <h4 className="text-muted text-sm font-medium mb-0.5">Availability</h4>
+                <p className="text-foreground font-semibold text-sm flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                  Open to projects
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 className="text-muted mb-2">Phone</h4>
-              <p className="text-[1.2rem] font-semibold">+243 970 509 466</p>
-            </div>
-             <div>
-              <h4 className="text-muted mb-2">Availability</h4>
-              <p className="text-[1.2rem] font-semibold">Open to projects</p>
+
+            {/* Right Column: Contact form */}
+            <div className="bg-[#120d1f] border border-border/10 p-8 rounded-2xl h-full flex flex-col">
+              <form className="flex flex-col gap-6 grow justify-between" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-muted text-xs font-medium uppercase tracking-wider">Name</label>
+                    <input type="text" placeholder="Your Name" className="bg-[#090614] border border-border/10 rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent/50 transition-colors w-full" />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label className="text-muted text-xs font-medium uppercase tracking-wider">Email</label>
+                    <input type="email" placeholder="your@email.com" className="bg-[#090614] border border-border/10 rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent/50 transition-colors w-full" />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-muted text-xs font-medium uppercase tracking-wider">Subject</label>
+                  <input type="text" placeholder="Message Subject" className="bg-[#090614] border border-border/10 rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent/50 transition-colors w-full" />
+                </div>
+                <div className="flex flex-col gap-2 grow">
+                  <label className="text-muted text-xs font-medium uppercase tracking-wider">Message</label>
+                  <textarea placeholder="Your message here..." className="bg-[#090614] border border-border/10 rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent/50 transition-colors w-full resize-none grow min-h-[140px]"></textarea>
+                </div>
+                <button type="submit" className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-4 rounded-xl flex items-center justify-center gap-2 transition-all mt-2">
+                  Send Message 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                </button>
+              </form>
             </div>
           </div>
 
+          {/* Footer Area */}
           <div className="py-12 border-t border-border">
              <p className="text-muted text-[1.1rem] max-w-[600px] mb-8">
                I build scalable full-stack systems with clean architecture, solid backend logic, and production-ready user experiences. Focused on code quality, maintainability, and real-world performance.
