@@ -8,8 +8,8 @@ export default function Projects() {
   const filteredProjects = PROJECTS_DATA.filter(p => activeProjectTab === "All" || p.category === activeProjectTab);
 
   return (
-    <motion.section 
-      id="projects" 
+    <motion.section
+      id="projects"
       className="py-24 border-b border-border scroll-mt-20"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export default function Projects() {
                 <p className="text-muted text-[0.95rem] mb-4">{project.description}</p>
                 <div className="mt-auto flex flex-wrap gap-2">
                   {project.techStack.map((tech, idx) => (
-                    <span key={idx} className="px-3 py-1.5 bg-[#18181b] text-muted rounded-full text-[0.8rem] font-medium border border-border/10">{tech}</span>
+                    <span key={idx} className="px-3 hover:border-b-blue-700 hover:border py-1.5 bg-[#18181b] text-muted rounded-full text-[0.8rem] font-medium border border-border/10">{tech}</span>
                   ))}
                 </div>
               </div>

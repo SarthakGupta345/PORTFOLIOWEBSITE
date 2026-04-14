@@ -1,15 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
 
 export default function CursorFollower() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Configuration for the smoothing effect
-  const springConfig = { damping: 25, stiffness: 150 };
-  const cursorX = useSpring(mouseX, springConfig);
-  const cursorY = useSpring(mouseY, springConfig);
+  // Slow, lazy spring so the glow trails behind the cursor
+  const glowSpring = { damping: 30, stiffness: 50 };
+  const glowX = useSpring(mouseX, glowSpring);
+  const glowY = useSpring(mouseY, glowSpring);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -23,15 +23,19 @@ export default function CursorFollower() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-8 h-8 rounded-full border border-accent/50 pointer-events-none z-[9999] opacity-0 md:opacity-100"
+      className="fixed top-0 left-0 pointer-events-none z-[1] opacity-0 md:opacity-100"
       style={{
-        x: cursorX,
-        y: cursorY,
+        x: glowX,
+        y: glowY,
         translateX: "-50%",
         translateY: "-50%",
+        width: 350,
+        height: 350,
+        borderRadius: "50%",
+        background:
+          "radial-gradient(circle, rgba(168,85,247,0.25) 0%, rgba(168,85,247,0.12) 35%, transparent 70%)",
+        filter: "blur(20px)",
       }}
-    >
-      <div className="absolute inset-0 m-auto w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
-    </motion.div>
+    />
   );
 }
