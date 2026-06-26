@@ -6,6 +6,7 @@ import 'lenis/dist/lenis.css';
 
 import { fontSans, fontMono } from '@/lib/fonts';
 import { Toaster } from '@/components/ui/sonner';
+import { Analytics } from '@vercel/analytics/next';
 
 import { Metadata, Viewport } from 'next';
 import './globals.css';
@@ -140,6 +141,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </ThemeProvider>
 
         <Toaster richColors position="top-center" />
+        <Analytics />
       </body>
     </html>
   );
