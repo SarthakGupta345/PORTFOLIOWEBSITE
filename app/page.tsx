@@ -1,0 +1,55 @@
+import FluidBackground from '@/components/Fluids/FluidBackground';
+import {
+  PageActions,
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from '@/components/page-header';
+import Pager from '@/components/pager';
+import { Button } from '@/components/ui/button';
+import { siteConfig } from '@/config/site';
+import { ExternalLink, Mail } from 'lucide-react';
+import Link from 'next/link';
+
+const IntroductionPage = async () => {
+  return (
+    <div className='px-6 py-8 md:px-12 md:py-12 lg:px-16 lg:py-14'>
+      <FluidBackground />
+      <PageHeader>
+        <PageHeaderHeading>Chandan Gupta</PageHeaderHeading>
+        <PageHeaderHeading className="mt-2 text-muted-foreground">
+          A coder by day, problem-solver by night!
+        </PageHeaderHeading>
+        <PageHeaderDescription>
+          I am a dedicated Software Engineer specializing in full-stack
+          application development. I enjoy crafting responsive web solutions
+          using modern technologies like Next.js, React, Tailwind CSS, Node.js,
+          Express, and MongoDB, while also applying DevOps practices, continuously
+          aiming to deliver high-quality, comprehensive, user-centric software solutions.
+        </PageHeaderDescription>
+        <PageActions>
+          <Button asChild size="sm" className="rounded-md">
+            <Link href={siteConfig.links.resume} target="_blank">
+              Get Resume
+              <ExternalLink className="size-3" strokeWidth={2} />
+            </Link>
+          </Button>
+          <Button asChild size="sm" variant="ghost" className="rounded-md">
+            <Link href={siteConfig.links.email}>
+              <Mail className="size-4" />
+              Send Mail
+            </Link>
+          </Button>
+        </PageActions>
+      </PageHeader>
+
+      <Pager
+        prevHref="/"
+        nextHref="/about"
+        prevTitle="Previous"
+        nextTitle="About Me"
+      />
+    </div>
+  );
+};
+export default IntroductionPage;
