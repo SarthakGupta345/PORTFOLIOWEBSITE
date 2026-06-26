@@ -439,8 +439,13 @@ void main() {
 
     if (followMouse) {
       window.addEventListener('mousemove', handleMouseMove);
-      return () => window.removeEventListener('mousemove', handleMouseMove);
     }
+
+    return () => {
+      if (followMouse) {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
   }, [followMouse]);
 
   return (

@@ -3,8 +3,6 @@ import { META_THEME_COLORS, siteConfig } from '@/config/site';
 import { LenisProvider } from '@/components/providers/lenis-provider';
 import 'lenis/dist/lenis.css';
 
-import { GoogleAnalytics } from '@next/third-parties/google';
-import { Analytics } from '@vercel/analytics/next';
 
 import { fontSans, fontMono } from '@/lib/fonts';
 import { Toaster } from '@/components/ui/sonner';
@@ -19,8 +17,6 @@ import { docsConfig } from '@/config/docs';
 
 import { setViewsServerAction } from './actions/getAndSetViewsServerAction';
 import { getLoveCountServerAction } from './actions/getAndSetLoveCountServerAction';
-
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: siteConfig.name,

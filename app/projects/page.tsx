@@ -4,12 +4,8 @@ import Pager from '@/components/pager';
 import Link from 'next/link';
 import { ArrowUpRight, Github, Plus, Sparkles } from 'lucide-react';
 import { projectOverviews } from '@/constants/projectOverview';
-import { PageHeader, PageHeaderDescription, PageHeaderHeading } from '@/components/page-header';
-import { useTheme } from 'next-themes';
-
+import { PageHeader, PageHeaderHeading } from '@/components/page-header';
 const ProjectsPage = () => {
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
 
   return (
     <div className="px-6 py-8 md:px-12 md:py-12 lg:px-16 lg:py-14 relative w-full min-h-screen font-sans antialiased select-none">

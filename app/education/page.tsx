@@ -2,7 +2,6 @@
 
 import DotField from '@/components/DotField';
 import {
-  PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from '@/components/page-header';
