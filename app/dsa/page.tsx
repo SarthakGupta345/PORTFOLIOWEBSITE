@@ -7,7 +7,6 @@ import codeforcesIcon from "../../public/images/codeforces.png"
 import codecheifIcons from "../../public/images/codecheif.png"
 import leetcodeIcon from "../../public/images/leetcode.png"
 import Image from "next/image";
-import GitHubGraphs from "../stats/GitHubGraphs";
 import CountUp from "@/components/CountUp";
 import LetterGlitch from "@/components/LetterGlitch";
 import { useTheme } from "next-themes";
