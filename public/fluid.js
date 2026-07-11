@@ -5,51 +5,51 @@ const initFluid = () => {
     resizeCanvas();
     let config = {
         // Quality
-        SIM_RESOLUTION: 128,
-        DYE_RESOLUTION: 1440,
-        CAPTURE_RESOLUTION: 512,
+        SIM_RESOLUTION: 192,
+        DYE_RESOLUTION: 2048,
+        CAPTURE_RESOLUTION: 1024,
 
         // Fluid Behaviour
-        DENSITY_DISSIPATION: 3.5,
-        VELOCITY_DISSIPATION: 2.2,
+        DENSITY_DISSIPATION: 0.985,
+        VELOCITY_DISSIPATION: 0.992,
 
         // Pressure Solver
         PRESSURE: 0.8,
-        PRESSURE_ITERATIONS: 20,
+        PRESSURE_ITERATIONS: 35,
 
         // Swirl Amount
-        CURL: 3,
+        CURL: 1.5,
 
         // Mouse Interaction
-        SPLAT_RADIUS: 0.12,
-        SPLAT_FORCE: 3000,
+        SPLAT_RADIUS: 0.18,
+        SPLAT_FORCE: 4500,
 
         // Visuals
         SHADING: true,
-        COLOR_UPDATE_SPEED: 6, // slightly faster so hues cycle noticeably across the rainbow
+        COLOR_UPDATE_SPEED: 0.8,
 
         // Misc
         PAUSED: false,
         BACK_COLOR: { r: 0, g: 0, b: 0 },
         TRANSPARENT: true,
 
-        // Bloom
+
+
+
+
         BLOOM: true,
-        BLOOM_ITERATIONS: 6,
-        BLOOM_RESOLUTION: 256,
-        BLOOM_INTENSITY: 0.3,
+        BLOOM_ITERATIONS: 8,
+        BLOOM_RESOLUTION: 512,
+        BLOOM_INTENSITY: 0.35,
         BLOOM_THRESHOLD: 0.65,
         BLOOM_SOFT_KNEE: 0.7,
 
-        // Sunrays — nice paired with full-rainbow colors for extra sparkle,
-        // but still off by default since it's a strong effect. Flip to true to try.
-        SUNRAYS: false,
-        SUNRAYS_RESOLUTION: 196,
-        SUNRAYS_WEIGHT: 0.25,
+        SUNRAYS: true,
+        SUNRAYS_RESOLUTION: 256,
+        SUNRAYS_WEIGHT: 0.3,
 
-        COLORFUL: true, // if this flag exists in your lib, it usually auto-cycles hue over time
+        COLORFUL: false,
     };
-
 
     function pointerPrototype() {
         this.id = -1;
@@ -995,13 +995,7 @@ const initFluid = () => {
         return delta;
     }
 
-    function generateColor() {
-        let c = HSVtoRGB(Math.random(), 1.0, 1.0);
-        c.r *= 0.15;
-        c.g *= 0.15;
-        c.b *= 0.15;
-        return c;
-    }
+    function generateColor() { let c = HSVtoRGB(Math.random(), 1.0, 1.0); c.r *= 0.15; c.g *= 0.15; c.b *= 0.15; return c; }
 
     function HSVtoRGB(h, s, v) {
         let r, g, b, i, f, p, q, t;
@@ -1020,9 +1014,12 @@ const initFluid = () => {
             case 5: r = v, g = p, b = q; break;
         }
 
-        return { r, g, b };
+        return {
+            r,
+            g,
+            b
+        };
     }
-
 
     function wrap(value, min, max) {
         let range = max - min;
