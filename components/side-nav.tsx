@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import LightRays from './LightRays';
 import { useTheme } from 'next-themes';
 import DotField from './DotField';
 import FluidBackground from './Fluids/FluidBackground';

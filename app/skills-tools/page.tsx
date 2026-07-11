@@ -1,7 +1,6 @@
 "use client";
 
 import { Icons } from '@/components/icons';
-import LightRays from '@/components/LightRays';
 import {
   PageHeader,
   PageHeaderDescription,
@@ -9,7 +8,6 @@ import {
 } from '@/components/page-header';
 import Pager from '@/components/pager';
 import { Badge } from '@/components/ui/badge';
-import { useTheme } from 'next-themes';
 
 const mySkillsCategories = [
   {
@@ -57,8 +55,6 @@ const mySkillsCategories = [
 ];
 
 const SkillsToolsPage = () => {
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
 
   return (
     <div className="relative w-full min-h-screen px-6 py-8 md:px-12 md:py-12 lg:px-16 lg:py-14">
