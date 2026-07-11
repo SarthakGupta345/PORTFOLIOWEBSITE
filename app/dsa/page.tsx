@@ -50,9 +50,8 @@ const StatCard = ({
 );
 
 const Stats = () => {
-    const { theme } = useTheme();
-
-    const isDark = theme === "dark";
+    const { resolvedTheme } = useTheme();
+    const isDark = resolvedTheme === "dark";
 
     const codeforcesStats = [
         { title: "Current Rating", value: 1424, icon: Trophy, colorClass: "text-cyan-600 dark:text-cyan-400" },
@@ -69,11 +68,11 @@ const Stats = () => {
     const leetcodeStats = [
         { title: "Problems Solved", value: 900, icon: Target, colorClass: "text-amber-500 dark:text-amber-400" },
         { title: "Contest Rating", value: 1950, icon: Trophy, colorClass: "text-amber-500 dark:text-amber-400" },
-        { title: "Easy / Med / Hard", value: 250, icon: Binary, colorClass: "text-neutral-600 dark:text-neutral-400" },
+        { title: "Current Streak", value: 45, icon: Binary, colorClass: "text-neutral-600 dark:text-neutral-400" },
     ];
 
     return (
-        <div className="relative px-6 py-8 md:px-12 md:py-12 lg:px-16 lg:py-14  w-full min-h-screen font-sans select-none antialiased">
+        <div className="relative px-6 py-8 md:px-12 md:py-12 lg:px-16 lg:py-14 w-full min-h-screen font-sans antialiased">
 
             {/* BACKGROUND LAYER: Letter Glitch isolated container */}
             {
@@ -97,7 +96,11 @@ const Stats = () => {
                         DSA & Competitive Programming
                     </h1>
                     <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-3xl leading-relaxed">
-                        I am an active competitive programmer who loves breaking down complex algorithms and solving intricate data structure problems. Here is a breakdown of my algorithmic profiles, rankings, and consistency matrices across core platforms.
+                        Problem-solving is where I sharpen the instincts I use in
+                        everyday engineering — thinking in trade-offs, spotting
+                        edge cases, and writing efficient code under pressure.
+                        Here's where that shows up across Codeforces, CodeChef,
+                        and LeetCode.
                     </p>
                 </div>
 
@@ -105,10 +108,10 @@ const Stats = () => {
                 <div className="space-y-4">
                     <div className="flex items-center gap-2">
                         <Image src={codeforcesIcon} alt="Codeforces" className="h-7 w-7 object-contain" />
-                        <h2 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
+                        <h2 className="text-xl mt-4.5 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
                             Codeforces <span className="text-neutral-300 dark:text-neutral-700 font-normal">|</span> <span className="text-cyan-600 dark:text-cyan-400 font-semibold text-lg">Specialist</span>
                         </h2>
-                        <a href="https://codeforces.com/profile/Sarthakgupta46" target="_blank" rel="noreferrer" className="ml-1 cursor-pointer">
+                        <a href="https://codeforces.com/profile/Sarthakgupta46" target="_blank" rel="noopener noreferrer" className="ml-1 mt-px cursor-pointer">
                             <ExternalLink className="size-4 text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-all duration-200" />
                         </a>
                     </div>
@@ -123,11 +126,11 @@ const Stats = () => {
                 <div className="space-y-4">
                     <div className="flex items-center gap-2">
                         <Image src={codecheifIcons} alt="CodeChef" className="h-7 w-7 object-contain" />
-                        <h2 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
+                        <h2 className="text-xl mt-4.5 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
                             CodeChef <span className="text-neutral-300 dark:text-neutral-700 font-normal">|</span> <span className="text-purple-600 dark:text-purple-400 font-semibold text-lg">4-Star Coder</span>
                         </h2>
-                        <a href="#" target="_blank" rel="noreferrer" className="ml-1 cursor-pointer">
-                            <ExternalLink className="size-4 text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-all duration-200" />
+                        <a href="https://www.codechef.com/users/sarthakgupta46" target="_blank" rel="noopener noreferrer" className="ml-1  mt-px cursor-pointer">
+                            <ExternalLink className="size-4  text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-all duration-200" />
                         </a>
                     </div>
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
@@ -141,11 +144,11 @@ const Stats = () => {
                 <div className="space-y-4">
                     <div className="flex items-center gap-2">
                         <Image src={leetcodeIcon} alt="LeetCode" className="h-6 w-6 object-contain" />
-                        <h2 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
+                        <h2 className="text-xl mt-4.5 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
                             LeetCode <span className="text-neutral-300 dark:text-neutral-700 font-normal">|</span> <span className="text-amber-600 dark:text-amber-500 font-semibold text-lg">900 Questions Solved</span>
                         </h2>
-                        <a href="https://leetcode.com/u/Sarthakgupta46/" target="_blank" rel="noreferrer" className="ml-1 cursor-pointer">
-                            <ExternalLink className="size-4 text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-all duration-200" />
+                        <a href="https://leetcode.com/u/Sarthakgupta46/" target="_blank" rel="noopener noreferrer" className="ml-1 cursor-pointer">
+                            <ExternalLink className="size-4 mt-px text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-all duration-200" />
                         </a>
                     </div>
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 mb-4">
@@ -159,9 +162,9 @@ const Stats = () => {
                 {/* Pagination Controls */}
                 <div className="pt-6">
                     <Pager
-                        prevHref="/contact"
+                        prevHref="/stats"
                         nextHref="/"
-                        prevTitle="Contact"
+                        prevTitle="Stats"
                         nextTitle="Home"
                     />
                 </div>

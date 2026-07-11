@@ -46,15 +46,24 @@ const EducationPage = () => {
           <PageHeaderHeading>Education</PageHeaderHeading>
 
           <PageHeaderHeading className="mt-2 text-muted-foreground">
-            I learned the theory in the classroom, but the real learning happens in the code editor.
+            The classroom gave me the theory; the code editor is where it actually clicked.
           </PageHeaderHeading>
 
           <PageHeaderDescription>
-            I am currently pursuing a Bachelor of Technology (B.Tech) in Computer Science and Engineering at MANIT. My academic journey has provided a strong foundation in computer science, data structures and algorithms, operating systems, database management systems, computer networks, and software engineering.
+            I'm pursuing a Bachelor of Technology in Computer Science and
+            Engineering at MANIT Bhopal, one of India's leading NITs. The
+            coursework has given me a solid grounding in data structures and
+            algorithms, operating systems, database management systems,
+            computer networks, and software engineering — the fundamentals
+            I lean on in every project I build.
           </PageHeaderDescription>
 
           <PageHeaderDescription>
-            Beyond academics, I enjoy building full-stack applications and exploring modern technologies such as React, Next.js, Node.js, Express.js, MongoDB, PostgreSQL, TypeScript, and cloud-based development. Every project helps me transform theoretical concepts into practical, real-world solutions.
+            Outside the classroom, I spend most of my time building
+            full-stack applications and exploring the modern web ecosystem —
+            React, Next.js, Node.js, Express.js, MongoDB, PostgreSQL,
+            TypeScript, and cloud deployment. It's how I turn what I learn
+            in theory into things that actually run in production.
           </PageHeaderDescription>
 
 

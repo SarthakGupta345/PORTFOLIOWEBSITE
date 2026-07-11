@@ -239,3 +239,8 @@ h6 {
 p {
   @apply leading-[1.65rem] [&:not(:first-child)]:mt-6;
 }
+
+::selection {
+  background-color: #fde047; /* yellow-300 */
+  color: black;
+}

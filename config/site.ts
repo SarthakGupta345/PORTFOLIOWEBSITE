@@ -23,12 +23,11 @@ export const siteConfig = {
   links: {
     shadcn: 'https://ui.shadcn.com/',
     telegram: 'https://t.me/nexjsx',
-    twitter: 'https://x.com/env_aditya',
     github: 'https://github.com/SarthakGupta345',
     githubProfile: 'https://github.com/SarthakGupta345',
     linkedin: 'https://www.linkedin.com/in/adityadomle/',
-    resume: 'https://drive.google.com/file/d/your-resume-id/view', // Add your resume link here
-    email: 'mailto:adityadomle14@gmail.com',
+    resume: 'https://drive.google.com/file/d/19RFXljPhRvNsGTFDHUNlDTWcfMz8BtAs/view?usp=sharing',
+    email: 'mailto:chandangupta921e@gmail.com',
     githubUsername: 'SarthakGupta345',
   },
 };

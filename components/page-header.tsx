@@ -21,7 +21,7 @@ function PageHeaderHeading({
   return (
     <h1
       className={cn(
-        "text-2xl font-bold leading-tight tracking-tighter sm:text-3xl md:text-4xl lg:leading-[1.1]",
+        "text-2xl font-bold leading-tight tracking-tighter sm:text-3xl md:text-4xl lg:leading-[1.1] selection:bg-yellow-300 selection:text-black",
         className
       )}
       {...props}
@@ -36,7 +36,7 @@ function PageHeaderDescription({
   return (
     <p
       className={cn(
-        "w-full text-left text-base font-light text-foreground sm:text-lg",
+        "w-full text-left text-base font-light text-foreground sm:text-lg selection:bg-yellow-300 selection:text-black",
         className
       )}
       {...props}

@@ -11,21 +11,22 @@ import { siteConfig } from '@/config/site';
 import { ExternalLink, Mail } from 'lucide-react';
 import Link from 'next/link';
 
-const IntroductionPage = async () => {
+const IntroductionPage = () => {
   return (
     <div className='px-6 py-8 md:px-12 md:py-12 lg:px-16 lg:py-14'>
       <FluidBackground />
       <PageHeader>
         <PageHeaderHeading>Chandan Gupta</PageHeaderHeading>
         <PageHeaderHeading className="mt-2 text-muted-foreground">
-          A coder by day, problem-solver by night!
+            I build things that work, and enjoy proving they can be faster.
         </PageHeaderHeading>
         <PageHeaderDescription>
-          I am a dedicated Software Engineer specializing in full-stack
-          application development. I enjoy crafting responsive web solutions
-          using modern technologies like Next.js, React, Tailwind CSS, Node.js,
-          Express, and MongoDB, while also applying DevOps practices, continuously
-          aiming to deliver high-quality, comprehensive, user-centric software solutions.
+          Computer Science Engineering student at MANIT Bhopal, wired to turn
+          ideas into working software — Next.js, React, Node.js, Express, and
+          MongoDB on the build side, Docker and AWS to get it out the door.
+          When I'm not shipping, you'll find me deep in a Codeforces or
+          CodeChef contest, hunting for the sharper algorithm and the cleaner
+          edge case.
         </PageHeaderDescription>
         <PageActions>
           <Button asChild size="sm" className="rounded-md">
@@ -44,10 +45,10 @@ const IntroductionPage = async () => {
       </PageHeader>
 
       <Pager
-        prevHref="/"
-        nextHref="/about"
-        prevTitle="Previous"
-        nextTitle="About Me"
+        prevHref="/contact"
+        nextHref="/dsa"
+        prevTitle="Contact"
+        nextTitle="DSA"
       />
     </div>
   );

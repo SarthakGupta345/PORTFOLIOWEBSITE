@@ -180,9 +180,9 @@ const Stats = async () => {
 
       <Pager
         prevHref="/contact"
-        nextHref="/"
+        nextHref="/dsa"
         prevTitle="Contact"
-        nextTitle="Home"
+        nextTitle="DSA"
       />
     </div>
   );

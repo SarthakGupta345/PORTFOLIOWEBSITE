@@ -57,42 +57,7 @@ export function SideNav({ config }: any) {
           />
         </div>
       }
-      {
-        path == '/skills-tools' && <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden opacity-70 dark:opacity-40">
-          <LightRays
-            // Light direction
-            raysOrigin="top-left"
-
-            // Softer colors
-            raysColor={isDark ? "#8B5CF6" : "#E5E7EB"}
-
-            // Very slow movement
-            raysSpeed={0.25}
-
-            // Less intense rays
-            lightSpread={0.55}
-            rayLength={3.2}
-
-            // Almost static
-            followMouse={true}
-            mouseInfluence={0.01}
-
-            // Minimal texture
-            noiseAmount={0.008}
-            distortion={0.03}
-
-            className="w-full h-full"
-
-            pulsating={false}
-
-            // Smooth fade
-            fadeDistance={2.4}
-
-            // Lower color intensity
-            saturation={0.35}
-          />
-        </div>
-      }
+      
 
 
       {/* FOREGROUND NAVIGATION CONTENT LAYER */}
